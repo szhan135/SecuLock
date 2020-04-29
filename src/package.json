@@ -1,0 +1,16 @@
+{
+	"name": "CS179J-Team6-SecuLock",
+	"version": "0.0.1",
+	"main": "index.js",
+	"repository": "https://github.com/szhan135/CS179J-Team6",
+	"license": "UNLICENSED",
+	"scripts": {
+		"client": "cd client && npm run serve",
+		"server": "cd Server && npm start",
+		"start": "concurrently - k \"npm run server\" \"npm run client\""
+	},
+	"dependencies": {
+		"concurrently": "^5.1.0"
+	},
+	"devDependencies": {}
+}
