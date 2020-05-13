@@ -10,40 +10,45 @@ let bodyParser = require('body-parser');
 const port = 5000;
 
 // Import routers
-const verifyRouter = require('./routes/verify');
-// const WorldDataRouter = require('./routes/WorldData');
-// const AgeDataRouter = require('./routes/AgeData');
-// const GenderDataRouter = require('./routes/GenderData');
-// const CaseDataRouter = require('./routes/CaseData');
+// const verifyRouter = require('./routes/verify');
+
 
 // App set up
+app.get("/", (req, res) => {
+	console.log("Responding to root route")
+	res.send("Welcome to SecuLock")
+  })
 
-// Used to make server decode data from body of requests
-app.use(bodyParser.urlencoded({ extended: true }));
+  app.get("/users", (req,res) => {
+	var user1 = {firstName: "Stephen", lastName: "Curry", id: 1 }
+	const user2 = {firstName: "Kally", lastName: "Durant", id: 2}
+	//res.send("Known Users Allow Access")
+	res.json([user1,user2])
+  })
 
-// Public assests set up
-app.use(express.static(path.join(__dirname, 'public')));
+  app.get("/verify", (req,res) => {
+	var user1 = {firstName: "Stephen", lastName: "Curry", id: "1"}
+	const user2 = {firstName: "Kally", lastName: "Durant", id: '2'}
+	res.send("Known Users Allow Access")
+	res.json([user1,user2])
+  })
+// // Used to make server decode data from body of requests
 
-// Used to output incoming requests in console
-app.use(morgan('dev'));
+// // Used to output incoming requests in console
+// app.use(morgan('dev'));
 
-//Used to make server receive requests from client server
-app.use(cors());
+// //Used to make server receive requests from client server
+// app.use(cors());
 
-// Used to recognize incoming requests as Json objects
-app.use(express.json());
+// // Used to recognize incoming requests as Json objects
+// app.use(express.json());
 
-// Set up routes
-app.use('/verify', verifyRouter);
-// app.use('/WorldData', WorldDataRouter);
-// app.use('/AgeData', AgeDataRouter);
-// app.use('/GenderData', GenderDataRouter);
-// app.use('/CaseData', CaseDataRouter);
-
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-	next(createError(404));
-});
+// const verifyRouter = require('./routes/verify');
+// app.use('/verify', verifyRouter);
+// // catch 404 and forward to error handler
+// app.use(function (req, res, next) {
+// 	next(createError(404));
+// });
 
 // Start listening
 app.listen(port, () => {
