@@ -21,8 +21,6 @@ The app will ask for a code, provided with the lock (tentative, may add scanning
 
 During the inital set up process, users will be asked to scan their RFID tags and fingerprints on the lock's scanners. The app will prompt a message to indicate success or ask the users to try again.
 
-In the "My locks" screen, select the lock to be locked/unlocked. A large button will apear on the lock page. In the center of the button, the locked/unlocked status is displayed. A prompt will suggest "Hold to unlock" or "Hold to lock" depending on the lock status.
-
-When the center button is held for 3 seconds, a prompt will display "Unlocking, please proceed with the fingerprint and RFID scanners.
+In the "My locks" screen, select the lock to be locked/unlocked. Tap the "Lock" button to lock, and tap the "Unlock" button to unlock. A text field will display the unlock and lock result (Successful or Failed).
 
 At the bottom of the lock screen, a "History" button appears. Users can select this button to view the lock and unlock history of the lock.
