@@ -1,4 +1,4 @@
-package com.cs179.iotconnection;
+package com.cs179.awsiotconnection;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.cs179.iotconnection", appContext.getPackageName());
+        assertEquals("com.cs179.awsiotconnection", appContext.getPackageName());
     }
 }

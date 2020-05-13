@@ -1,6 +1,3 @@
 <resources>
-    <string name="app_name">IoT Connection</string>
-    <string name="button_lock">Lock</string>
-    <string name="button_unlock">Unlock</string>
-    <string name="result">Result</string>
+    <string name="app_name">AWS IoT Connection</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.cs179.iotconnection;
+package com.cs179.awsiotconnection;
 
 import org.junit.Test;
 
