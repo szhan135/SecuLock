@@ -6,9 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,13 +29,15 @@ public class MainActivity extends AppCompatActivity {
 
         textViewResult = findViewById(R.id.text_view_result);
 
+        // Handle timeout
         OkHttpClient httpClient = new OkHttpClient.Builder()
                 .connectTimeout(20, TimeUnit.SECONDS)
                 .readTimeout(30, TimeUnit.SECONDS)
                 .writeTimeout(30, TimeUnit.SECONDS)
                 .build();
+        // Retrofit forces a / at the end of the base url
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://b0fzda82dg.execute-api.us-west-2.amazonaws.com/") // Retrofit forces a / at the end
+                .baseUrl("https://b0fzda82dg.execute-api.us-west-2.amazonaws.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClient)
                 .build();
@@ -51,18 +50,22 @@ public class MainActivity extends AppCompatActivity {
         //createIotCommand();
     }
 
+    // Lock button onClick function
     public void lock(View view){
         createIotCommand("Lock");
     }
 
+    // Unlock button onClick function
     public void unlock(View view){
         createIotCommand("Unlock");
     }
 
+    // Practice button
     public void GG(View view){
         createIotCommand("GG");
     }
 
+    // Practice
     private void getPosts(){
         Map<String, String> parameters = new HashMap<>();
         parameters.put("userId","1");
@@ -95,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // Practice
     private void getComments(){
         Call<List<Comment>> call = awsIotApi.getComments("posts/3/comments");
 
@@ -124,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
         }));
     }
 
+    // Practice
     private void createPost(){
         Post post = new Post(23, "New Title", "New Text");
         Map<String, String> fields = new HashMap<>();
@@ -157,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // Practice
     private void getCases(){
         Call<List<Case>> call = awsIotApi.getCases("countries");
 
@@ -192,10 +198,15 @@ public class MainActivity extends AppCompatActivity {
         }));
     }
 
+    // Send POST request to AWS IoT
     private void createIotCommand(String command){
         Map<String, String> fields = new HashMap<>();
         fields.put("text", command);
+        fields.put("user", "testUser"); // Mock user username, mock data in AWS Lambda index.js
+        fields.put("password", "testPassword"); // Mock user password
         Call<IoTCommand> call = awsIotApi.createCommand(fields);
+        // Asynchronously send the request and notify callback of its response
+        // to avoid NetworkOnMainThreadException
         call.enqueue(new Callback<IoTCommand>() {
             @Override
             public void onResponse(Call<IoTCommand> call, Response<IoTCommand> response) {
@@ -205,13 +216,14 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 IoTCommand commandResponse = response.body();
-                //String content = "";
+                String content = "";
                 //content += "Status Code: " + response.code() + "\n";
                 //content += "Text: " + commandResponse.getText() + "\n";
-                String content = getResponseText(commandResponse.getText());
+                content += getResponseText(commandResponse.getText());
                 textViewResult.setText(content);
             }
 
+            // Handle failure
             @Override
             public void onFailure(Call<IoTCommand> call, Throwable t) {
                 textViewResult.setText(t.getMessage());
@@ -219,11 +231,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // Get the payload content from POST request response
     private String getResponseText(String s){
         Map<String, String> myMap = new HashMap<String, String>();
-        //String s = "{\"topic\":\"topic_1\",\"payload\":\"GG\",\"qos\":0}";
+        //String s = "{\"topic\":\"topic_1\",\"payload\":\"text\",\"qos\":0}";
         String[] pairs = s.split(",");
-
         String[] payload = pairs[1].split(":");
         String text = payload[1].replace("\"","");
         return text;

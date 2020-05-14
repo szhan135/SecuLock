@@ -2,6 +2,7 @@ package com.cs179.awsiotconnection;
 
 import com.google.gson.annotations.SerializedName;
 
+//Practice class
 public class Post {
 
     private int userId;

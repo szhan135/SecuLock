@@ -1,7 +1,7 @@
 package com.cs179.awsiotconnection;
 
 import com.google.gson.annotations.SerializedName;
-
+// Practice class
 public class Comment {
 
     private int postId;
