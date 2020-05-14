@@ -27,6 +27,7 @@ import com.cs179.androidapp.LocksApp;
 import com.cs179.androidapp.R;
 import com.cs179.androidapp.services.AnalyticsService;
 
+
 public class LockDetailActivity extends AppCompatActivity {
     /**
      * Injection of the Analytics Service

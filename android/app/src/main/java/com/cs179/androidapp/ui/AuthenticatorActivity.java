@@ -27,6 +27,7 @@ public class AuthenticatorActivity extends AppCompatActivity {
             @Override
             public void onSuccess(Activity activity, IdentityProvider identityProvider) {
                 Toast.makeText(AuthenticatorActivity.this,
+                        //String.format("Logged in as %s", identityManager.getCachedUserID()),
                         String.format("Logged in as %s", identityManager.getCachedUserID()),
                         Toast.LENGTH_LONG).show();
                 // Go to the main activity

@@ -43,6 +43,6 @@ public class LockListViewHolder extends RecyclerView.ViewHolder {
         this.lock = lock;
         String title = lock.getTitle();
         titleField.setText(title == null ? "null" : title);
-        idField.setText(lock.getLockId());
+        idField.setText(lock.getContent());
     }
 }

@@ -13,10 +13,12 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 <resources>
-    <string name="app_name">SecureLock</string>
+    <string name="app_name">SecuLock</string>
     <string name="title_lock_detail">Lock Detail</string>
     <string name="title_hint">Lock Label</string>
     <string name="content_hint">Location</string>
+    <string name="button_lock_name">Lock</string>
+    <string name="button_unlock_name">Unlock</string>
 
     <!-- These will never be seen by the user, but they stop warnings from popping up -->
     <!-- They are only for making the designer display actual text during development -->
