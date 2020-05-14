@@ -1,22 +1,22 @@
 # this is an auto generated file. This will be overwritten
-subscription OnCreateNote($owner: String!) {
-  onCreateNote(owner: $owner) {
+subscription OnCreateLock($owner: String!) {
+  onCreateLock(owner: $owner) {
     id
     title
     content
     owner
   }
 }
-subscription OnUpdateNote($owner: String!) {
-  onUpdateNote(owner: $owner) {
+subscription OnUpdateLock($owner: String!) {
+  onUpdateLock(owner: $owner) {
     id
     title
     content
     owner
   }
 }
-subscription OnDeleteNote($owner: String!) {
-  onDeleteNote(owner: $owner) {
+subscription OnDeleteLock($owner: String!) {
+  onDeleteLock(owner: $owner) {
     id
     title
     content

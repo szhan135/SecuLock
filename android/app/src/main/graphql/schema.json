@@ -16,7 +16,7 @@
                 "description": null,
                 "fields": [
                     {
-                        "name": "getNote",
+                        "name": "getLock",
                         "description": null,
                         "args": [
                             {
@@ -36,14 +36,14 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "Note",
+                            "name": "Lock",
                             "ofType": null
                         },
                         "isDeprecated": false,
                         "deprecationReason": null
                     },
                     {
-                        "name": "listNotes",
+                        "name": "listLocks",
                         "description": null,
                         "args": [
                             {
@@ -51,7 +51,7 @@
                                 "description": null,
                                 "type": {
                                     "kind": "INPUT_OBJECT",
-                                    "name": "ModelNoteFilterInput",
+                                    "name": "ModelLockFilterInput",
                                     "ofType": null
                                 },
                                 "defaultValue": null
@@ -79,7 +79,7 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "ModelNoteConnection",
+                            "name": "ModelLockConnection",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -103,7 +103,7 @@
             },
             {
                 "kind": "OBJECT",
-                "name": "Note",
+                "name": "Lock",
                 "description": null,
                 "fields": [
                     {
@@ -184,7 +184,7 @@
             },
             {
                 "kind": "INPUT_OBJECT",
-                "name": "ModelNoteFilterInput",
+                "name": "ModelLockFilterInput",
                 "description": null,
                 "fields": null,
                 "inputFields": [
@@ -226,7 +226,7 @@
                             "name": null,
                             "ofType": {
                                 "kind": "INPUT_OBJECT",
-                                "name": "ModelNoteFilterInput",
+                                "name": "ModelLockFilterInput",
                                 "ofType": null
                             }
                         },
@@ -240,7 +240,7 @@
                             "name": null,
                             "ofType": {
                                 "kind": "INPUT_OBJECT",
-                                "name": "ModelNoteFilterInput",
+                                "name": "ModelLockFilterInput",
                                 "ofType": null
                             }
                         },
@@ -251,7 +251,7 @@
                         "description": null,
                         "type": {
                             "kind": "INPUT_OBJECT",
-                            "name": "ModelNoteFilterInput",
+                            "name": "ModelLockFilterInput",
                             "ofType": null
                         },
                         "defaultValue": null
@@ -729,7 +729,7 @@
             },
             {
                 "kind": "OBJECT",
-                "name": "ModelNoteConnection",
+                "name": "ModelLockConnection",
                 "description": null,
                 "fields": [
                     {
@@ -741,7 +741,7 @@
                             "name": null,
                             "ofType": {
                                 "kind": "OBJECT",
-                                "name": "Note",
+                                "name": "Lock",
                                 "ofType": null
                             }
                         },
@@ -772,7 +772,7 @@
                 "description": null,
                 "fields": [
                     {
-                        "name": "createNote",
+                        "name": "createLock",
                         "description": null,
                         "args": [
                             {
@@ -783,7 +783,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "CreateNoteInput",
+                                        "name": "CreateLockInput",
                                         "ofType": null
                                     }
                                 },
@@ -794,7 +794,7 @@
                                 "description": null,
                                 "type": {
                                     "kind": "INPUT_OBJECT",
-                                    "name": "ModelNoteConditionInput",
+                                    "name": "ModelLockConditionInput",
                                     "ofType": null
                                 },
                                 "defaultValue": null
@@ -802,14 +802,14 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "Note",
+                            "name": "Lock",
                             "ofType": null
                         },
                         "isDeprecated": false,
                         "deprecationReason": null
                     },
                     {
-                        "name": "updateNote",
+                        "name": "updateLock",
                         "description": null,
                         "args": [
                             {
@@ -820,7 +820,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "UpdateNoteInput",
+                                        "name": "UpdateLockInput",
                                         "ofType": null
                                     }
                                 },
@@ -831,7 +831,7 @@
                                 "description": null,
                                 "type": {
                                     "kind": "INPUT_OBJECT",
-                                    "name": "ModelNoteConditionInput",
+                                    "name": "ModelLockConditionInput",
                                     "ofType": null
                                 },
                                 "defaultValue": null
@@ -839,14 +839,14 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "Note",
+                            "name": "Lock",
                             "ofType": null
                         },
                         "isDeprecated": false,
                         "deprecationReason": null
                     },
                     {
-                        "name": "deleteNote",
+                        "name": "deleteLock",
                         "description": null,
                         "args": [
                             {
@@ -857,7 +857,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "DeleteNoteInput",
+                                        "name": "DeleteLockInput",
                                         "ofType": null
                                     }
                                 },
@@ -868,7 +868,7 @@
                                 "description": null,
                                 "type": {
                                     "kind": "INPUT_OBJECT",
-                                    "name": "ModelNoteConditionInput",
+                                    "name": "ModelLockConditionInput",
                                     "ofType": null
                                 },
                                 "defaultValue": null
@@ -876,7 +876,7 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "Note",
+                            "name": "Lock",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -890,7 +890,7 @@
             },
             {
                 "kind": "INPUT_OBJECT",
-                "name": "CreateNoteInput",
+                "name": "CreateLockInput",
                 "description": null,
                 "fields": null,
                 "inputFields": [
@@ -939,7 +939,7 @@
             },
             {
                 "kind": "INPUT_OBJECT",
-                "name": "ModelNoteConditionInput",
+                "name": "ModelLockConditionInput",
                 "description": null,
                 "fields": null,
                 "inputFields": [
@@ -971,7 +971,7 @@
                             "name": null,
                             "ofType": {
                                 "kind": "INPUT_OBJECT",
-                                "name": "ModelNoteConditionInput",
+                                "name": "ModelLockConditionInput",
                                 "ofType": null
                             }
                         },
@@ -985,7 +985,7 @@
                             "name": null,
                             "ofType": {
                                 "kind": "INPUT_OBJECT",
-                                "name": "ModelNoteConditionInput",
+                                "name": "ModelLockConditionInput",
                                 "ofType": null
                             }
                         },
@@ -996,7 +996,7 @@
                         "description": null,
                         "type": {
                             "kind": "INPUT_OBJECT",
-                            "name": "ModelNoteConditionInput",
+                            "name": "ModelLockConditionInput",
                             "ofType": null
                         },
                         "defaultValue": null
@@ -1008,7 +1008,7 @@
             },
             {
                 "kind": "INPUT_OBJECT",
-                "name": "UpdateNoteInput",
+                "name": "UpdateLockInput",
                 "description": null,
                 "fields": null,
                 "inputFields": [
@@ -1053,7 +1053,7 @@
             },
             {
                 "kind": "INPUT_OBJECT",
-                "name": "DeleteNoteInput",
+                "name": "DeleteLockInput",
                 "description": null,
                 "fields": null,
                 "inputFields": [
@@ -1078,7 +1078,7 @@
                 "description": null,
                 "fields": [
                     {
-                        "name": "onCreateNote",
+                        "name": "onCreateLock",
                         "description": null,
                         "args": [
                             {
@@ -1098,14 +1098,14 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "Note",
+                            "name": "Lock",
                             "ofType": null
                         },
                         "isDeprecated": false,
                         "deprecationReason": null
                     },
                     {
-                        "name": "onUpdateNote",
+                        "name": "onUpdateLock",
                         "description": null,
                         "args": [
                             {
@@ -1125,14 +1125,14 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "Note",
+                            "name": "Lock",
                             "ofType": null
                         },
                         "isDeprecated": false,
                         "deprecationReason": null
                     },
                     {
-                        "name": "onDeleteNote",
+                        "name": "onDeleteLock",
                         "description": null,
                         "args": [
                             {
@@ -1152,7 +1152,7 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "Note",
+                            "name": "Lock",
                             "ofType": null
                         },
                         "isDeprecated": false,

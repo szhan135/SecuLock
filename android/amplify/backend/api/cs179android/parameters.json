@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "cs179android",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authcognito7314d097",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

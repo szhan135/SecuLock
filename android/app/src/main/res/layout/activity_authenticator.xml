@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.amazonaws.mobile.samples.mynotes.ui.AuthenticatorActivity">
+    tools:context="com.cs179.androidapp.ui.AuthenticatorActivity">
 
 </android.support.constraint.ConstraintLayout>

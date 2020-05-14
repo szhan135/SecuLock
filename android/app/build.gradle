@@ -20,7 +20,7 @@ android {
     buildToolsVersion '27.0.3'
 
     defaultConfig {
-        applicationId "com.amazonaws.mobile.samples.notes"
+        applicationId "com.cs179.androidapp"
         minSdkVersion 23
         targetSdkVersion 27
         versionCode 1
@@ -73,7 +73,7 @@ dependencies {
     implementation "com.amazonaws:aws-android-sdk-pinpoint:$aws_version"
 
     // AWS AppSync SDK
-    implementation "com.amazonaws:aws-android-sdk-appsync:2.6.+"
+    implementation "com.amazonaws:aws-android-sdk-appsync:2.8.2"
 
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'

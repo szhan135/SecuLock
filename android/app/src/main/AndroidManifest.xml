@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.amazonaws.mobile.samples.mynotes">
+    package="com.cs179.androidapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
-        android:name=".NotesApp"
+        android:name="com.cs179.androidapp.LocksApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -19,7 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.AuthenticatorActivity"
+            android:name="com.cs179.androidapp.ui.AuthenticatorActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,18 +27,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.NoteListActivity"
+            android:name="com.cs179.androidapp.ui.LockListActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".ui.NoteDetailActivity"
-            android:label="@string/title_note_detail"
-            android:parentActivityName=".ui.NoteListActivity"
+            android:name="com.cs179.androidapp.ui.LockDetailActivity"
+            android:label="@string/title_lock_detail"
+            android:parentActivityName="com.cs179.androidapp.ui.LockListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.NoteListActivity" />
+                android:value="com.cs179.androidapp.ui.LockListActivity" />
         </activity>
     </application>
 

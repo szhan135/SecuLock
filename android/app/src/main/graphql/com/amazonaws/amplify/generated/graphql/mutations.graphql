@@ -1,31 +1,31 @@
 # this is an auto generated file. This will be overwritten
-mutation CreateNote(
-  $input: CreateNoteInput!
-  $condition: ModelNoteConditionInput
+mutation CreateLock(
+  $input: CreateLockInput!
+  $condition: ModelLockConditionInput
 ) {
-  createNote(input: $input, condition: $condition) {
+  createLock(input: $input, condition: $condition) {
     id
     title
     content
     owner
   }
 }
-mutation UpdateNote(
-  $input: UpdateNoteInput!
-  $condition: ModelNoteConditionInput
+mutation UpdateLock(
+  $input: UpdateLockInput!
+  $condition: ModelLockConditionInput
 ) {
-  updateNote(input: $input, condition: $condition) {
+  updateLock(input: $input, condition: $condition) {
     id
     title
     content
     owner
   }
 }
-mutation DeleteNote(
-  $input: DeleteNoteInput!
-  $condition: ModelNoteConditionInput
+mutation DeleteLock(
+  $input: DeleteLockInput!
+  $condition: ModelLockConditionInput
 ) {
-  deleteNote(input: $input, condition: $condition) {
+  deleteLock(input: $input, condition: $condition) {
     id
     title
     content
