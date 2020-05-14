@@ -1,13 +1,13 @@
 package com.cs179.awsiotconnection;
 
-import androidx.appcompat.app.AppCompatActivity;
+//import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -42,12 +42,6 @@ public class MainActivity extends AppCompatActivity {
                 .client(httpClient)
                 .build();
         awsIotApi = retrofit.create(AWSIoTAPI.class);
-
-        //getPosts();
-        //getComments();
-        //createPost();
-        //getCases();
-        //createIotCommand();
     }
 
     // Lock button onClick function
@@ -63,139 +57,6 @@ public class MainActivity extends AppCompatActivity {
     // Practice button
     public void GG(View view){
         createIotCommand("GG");
-    }
-
-    // Practice
-    private void getPosts(){
-        Map<String, String> parameters = new HashMap<>();
-        parameters.put("userId","1");
-        parameters.put("_sort","id");
-        parameters.put("_order","desc");
-
-        Call<List<Post>> call = awsIotApi.getPosts(parameters);
-        call.enqueue(new Callback<List<Post>>() {
-            @Override
-            public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {
-                if (!response.isSuccessful()) {
-                    textViewResult.setText("Code: " + response.code());
-                    return;
-                }
-                List<Post> posts = response.body();
-                for (Post post : posts) {
-                    String content = "";
-                    content += "ID: " + post.getId() + "\n";
-                    content += "User ID: " + post.getUserId() + "\n";
-                    content += "Title: " + post.getTitle() + "\n";
-                    content += "Text: " + post.getText() + "\n\n";
-                    textViewResult.append(content);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Post>> call, Throwable t) {
-                textViewResult.setText(t.getMessage());
-            }
-        });
-    }
-
-    // Practice
-    private void getComments(){
-        Call<List<Comment>> call = awsIotApi.getComments("posts/3/comments");
-
-        call.enqueue((new Callback<List<Comment>>() {
-            @Override
-            public void onResponse(Call<List<Comment>> call, Response<List<Comment>> response) {
-                if (!response.isSuccessful()){
-                    textViewResult.setText("Code" + response.code());
-                    return;
-                }
-                List<Comment> comments = response.body();
-                for (Comment comment : comments) {
-                    String content = "";
-                    content += "ID: " + comment.getId() + "\n";
-                    content += "Post ID: " + comment.getPostId() + "\n";
-                    content += "Name: " + comment.getName() + "\n";
-                    content += "Email: " + comment.getEmail() + "\n";
-                    content += "Text: " + comment.getText() + "\n\n";
-                    textViewResult.append(content);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Comment>> call, Throwable t) {
-                textViewResult.setText(t.getMessage());
-            }
-        }));
-    }
-
-    // Practice
-    private void createPost(){
-        Post post = new Post(23, "New Title", "New Text");
-        Map<String, String> fields = new HashMap<>();
-        fields.put("text", "Test");
-        Call<Post> call = awsIotApi.createPost(fields);
-        call.enqueue(new Callback<Post>() {
-            @Override
-            public void onResponse(Call<Post> call, Response<Post> response) {
-                if (!response.isSuccessful()){
-                    textViewResult.setText("Code: " + response.code());
-                    return;
-                }
-
-                Post postResponse = response.body();
-
-                String content = "";
-                content += "Code: " + response.code() + "\n";
-                content += "ID: " + postResponse.getId() + "\n";
-                content += "Post ID: " + postResponse.getId() + "\n";
-                content += "User ID: " + postResponse.getUserId() + "\n";
-                content += "Title: " + postResponse.getTitle() + "\n";
-                content += "Text: " + postResponse.getText() + "\n\n";
-                textViewResult.setText(content);
-            }
-
-
-            @Override
-            public void onFailure(Call<Post> call, Throwable t) {
-                textViewResult.setText(t.getMessage());
-            }
-        });
-    }
-
-    // Practice
-    private void getCases(){
-        Call<List<Case>> call = awsIotApi.getCases("countries");
-
-        call.enqueue((new Callback<List<Case>>() {
-            @Override
-            public void onResponse(Call<List<Case>> call, Response<List<Case>> response) {
-                if (!response.isSuccessful()){
-                    textViewResult.setText("Code: " + response.code());
-                    return;
-                }
-
-                List<Case> cases = response.body();
-                for (Case _case: cases){
-                    String content = "";
-                    content += "Country: " + _case.getCountry() + "\n";
-                    content += "Country Code: " + _case.getCountryCode() + "\n";
-                    content += "Date: " + _case.getDate() + "\n";
-                    content += "Slug: " + _case.getSlug() + "\n";
-                    content += "New Deaths: " + _case.getNewDeaths() + "\n";
-                    content += "New Confirmed: " + _case.getNewConfirmed() + "\n";
-                    content += "New Recovered: " + _case.getNewRecovered() + "\n";
-                    content += "Total Confirmed: " + _case.getTotalConfirmed() + "\n";
-                    content += "Total Deaths: " + _case.getTotalDeaths() + "\n";
-                    content += "Total Recovered: " + _case.getTotalRecovered() + "\n\n";
-                    textViewResult.append(content);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Case>> call, Throwable t) {
-
-            }
-        }));
     }
 
     // Send POST request to AWS IoT
