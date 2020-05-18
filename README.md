@@ -24,3 +24,6 @@ During the inital set up process, users will be asked to scan their RFID tags an
 In the "My locks" screen, select the lock to be locked/unlocked. Tap the "Lock" button to lock, and tap the "Unlock" button to unlock. A text field will display the unlock and lock result (Successful or Failed).
 
 At the bottom of the lock screen, a "History" button appears. Users can select this button to view the lock and unlock history of the lock.
+
+After downloading from Github, the existing AWS Amplify project can be reused by running 'amplify env add' with the existing AWS profile.
+
