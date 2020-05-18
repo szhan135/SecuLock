@@ -1,5 +1,0 @@
-type Lock @model @auth(rules:[{allow: owner}]) {
-    id: ID!
-    title: String!
-    content: String!
-}

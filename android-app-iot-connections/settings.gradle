@@ -1,2 +1,0 @@
-rootProject.name='AWS IoT Connection'
-include ':app'
