@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.amazonaws:aws-android-sdk-appsync:2.8.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ba342ec5c8cae6c471961ae5e33ef540/aws-android-sdk-appsync-2.8.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ba342ec5c8cae6c471961ae5e33ef540/aws-android-sdk-appsync-2.8.2/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-appsync/2.8.2/328b58323077004c14ff2b37255da1a27d5b7f23/aws-android-sdk-appsync-2.8.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-appsync/2.8.2/8750f1666e64bb7770994c0973824abe511e5c52/aws-android-sdk-appsync-2.8.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
