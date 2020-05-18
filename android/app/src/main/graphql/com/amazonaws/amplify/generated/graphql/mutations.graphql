@@ -1,0 +1,34 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateLock(
+  $input: CreateLockInput!
+  $condition: ModelLockConditionInput
+) {
+  createLock(input: $input, condition: $condition) {
+    id
+    title
+    content
+    owner
+  }
+}
+mutation UpdateLock(
+  $input: UpdateLockInput!
+  $condition: ModelLockConditionInput
+) {
+  updateLock(input: $input, condition: $condition) {
+    id
+    title
+    content
+    owner
+  }
+}
+mutation DeleteLock(
+  $input: DeleteLockInput!
+  $condition: ModelLockConditionInput
+) {
+  deleteLock(input: $input, condition: $condition) {
+    id
+    title
+    content
+    owner
+  }
+}
