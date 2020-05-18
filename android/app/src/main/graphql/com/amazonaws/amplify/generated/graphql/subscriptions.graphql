@@ -1,0 +1,25 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateLock($owner: String!) {
+  onCreateLock(owner: $owner) {
+    id
+    title
+    content
+    owner
+  }
+}
+subscription OnUpdateLock($owner: String!) {
+  onUpdateLock(owner: $owner) {
+    id
+    title
+    content
+    owner
+  }
+}
+subscription OnDeleteLock($owner: String!) {
+  onDeleteLock(owner: $owner) {
+    id
+    title
+    content
+    owner
+  }
+}

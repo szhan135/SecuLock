@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-cs179android-dev-34023-authRole",
+            "UnauthRoleArn": "arn:aws:iam::203210589626:role/amplify-cs179android-dev-34023-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::203210589626:role/amplify-cs179android-dev-34023-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "amplify-cs179android-dev-34023-deployment",
+            "UnauthRoleName": "amplify-cs179android-dev-34023-unauthRole",
+            "StackName": "amplify-cs179android-dev-34023",
+            "StackId": "arn:aws:cloudformation:us-west-2:203210589626:stack/amplify-cs179android-dev-34023/5c25a000-95cf-11ea-98d3-02f90cd818d0",
+            "AmplifyAppId": "d3ethluqrgglal"
+        },
+        "categories": {
+            "auth": {
+                "cognito7314d097": {}
+            }
+        }
+    }
+}

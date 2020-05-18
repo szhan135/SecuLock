@@ -1,0 +1,21 @@
+{
+    "appName": "cs179android",
+    "roleName": "pinpointLambdaRolea8c08e0c",
+    "cloudformationPolicyName": "cloudformationPolicya8c08e0c",
+    "cloudWatchPolicyName": "cloudWatchPolicya8c08e0c",
+    "pinpointPolicyName": "pinpointPolicya8c08e0c",
+    "authPolicyName": "pinpoint_amplify_a8c08e0c",
+    "unauthPolicyName": "pinpoint_amplify_a8c08e0c",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}
