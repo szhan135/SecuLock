@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-team6iotconnection-dev-225959-authRole",
+            "UnauthRoleArn": "arn:aws:iam::203210589626:role/amplify-team6iotconnection-dev-225959-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::203210589626:role/amplify-team6iotconnection-dev-225959-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "amplify-team6iotconnection-dev-225959-deployment",
+            "UnauthRoleName": "amplify-team6iotconnection-dev-225959-unauthRole",
+            "StackName": "amplify-team6iotconnection-dev-225959",
+            "StackId": "arn:aws:cloudformation:us-west-2:203210589626:stack/amplify-team6iotconnection-dev-225959/2612ebc0-95a8-11ea-ad8c-02c46d078154",
+            "AmplifyAppId": "d79yu3yiy3wz9"
+        },
+        "categories": {
+            "auth": {
+                "cognito58066061": {}
+            }
+        }
+    }
+}
