@@ -10,13 +10,13 @@ import retrofit2.http.POST;
 public interface AWSIoTAPI {
     // Can use full URL to replace "partial url" and it will overwrite the base url
 
-    // Not used
-    @Headers({"Content-Type:application/json"})
-    @POST("Test/publish-to-pi-3/")
-    Call<IoTAPICommand> createCommand(@Body IoTAPICommand iotCommand);
-
     // This is the one
     @Headers({"Content-Type:application/json"})
     @POST("Test/publish-to-pi-3/")
     Call<IoTAPICommand> createCommand(@Body Map<String, String> fields);
+
+    // Not used
+    @Headers({"Content-Type:application/json"})
+    @POST("Test/publish-to-pi-3/")
+    Call<IoTAPICommand> createCommand(@Body IoTAPICommand iotCommand);
 }
