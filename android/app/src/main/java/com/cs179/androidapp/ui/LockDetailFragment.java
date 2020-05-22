@@ -20,7 +20,6 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -56,7 +55,7 @@ public class LockDetailFragment extends Fragment {
     private AWSIoTAPI awsIotApi;
     private Button button_lock;
     private Button button_unlock;
-
+    private String token;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -66,6 +65,7 @@ public class LockDetailFragment extends Fragment {
         if (arguments != null) {
             String lockId = arguments.getString(LocksApp.ITEM_ID);
             this.lockId = (lockId.equals("new")) ? null : lockId;
+            token = arguments.getString("token");
         }
 
         // Set up Retrofit to handle HTTP requests
@@ -75,6 +75,7 @@ public class LockDetailFragment extends Fragment {
                 .readTimeout(30, TimeUnit.SECONDS)
                 .writeTimeout(30, TimeUnit.SECONDS)
                 .build();
+
         // Retrofit forces a / at the end of the base url
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://b0fzda82dg.execute-api.us-west-2.amazonaws.com/")
@@ -165,9 +166,10 @@ public class LockDetailFragment extends Fragment {
     public void createIotCommand(String command) {
         Map<String, String> fields = new HashMap<>();
         fields.put("text", command);
-        fields.put("user", "testUser"); // Mock user username, mock data in AWS Lambda index.js
-        fields.put("password", "testPassword"); // Mock user password
-        Call<IoTAPICommand> call = awsIotApi.createCommand(fields);
+        //fields.put("user", "testUser"); // Mock user username, mock data in AWS Lambda index.js
+        //fields.put("password", "testPassword"); // Mock user password
+        String header = "application/json";
+        Call<IoTAPICommand> call = awsIotApi.createCommand(header, token, fields);
         // Asynchronously send the request and notify callback of its response
         // to avoid NetworkOnMainThreadException
         call.enqueue(new Callback<IoTAPICommand>() {

@@ -25,9 +25,6 @@ import com.cs179.androidapp.services.aws.AWSAnalyticsService;
 import com.cs179.androidapp.services.aws.AWSDataService;
 import com.cs179.androidapp.services.aws.AWSService;
 
-/**
- * This is a "fake" dependency injection system.
- */
 public class Injection {
     private static DataService dataService = null;
     private static AnalyticsService analyticsService = null;
