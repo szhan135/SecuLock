@@ -32,6 +32,7 @@ public class AuthenticatorActivity extends AppCompatActivity {
                 // Go to the main activity
                 final Intent intent = new Intent(activity, LockListActivity.class)
                         .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("token", identityManager.getCurrentIdentityProvider().getToken());
                 activity.startActivity(intent);
                 activity.finish();
             }
