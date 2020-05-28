@@ -48,6 +48,7 @@ public class LockDetailActivity extends AppCompatActivity {
         LockDetailFragment fragment = new LockDetailFragment();
         Bundle arguments = new Bundle();
         arguments.putString(LocksApp.ITEM_ID, getIntent().getStringExtra(LocksApp.ITEM_ID));
+        arguments.putString("token", getIntent().getStringExtra("token"));
         fragment.setArguments(arguments);
 
         // Add the fragment to the UI

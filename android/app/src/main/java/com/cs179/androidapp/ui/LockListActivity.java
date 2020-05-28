@@ -54,10 +54,12 @@ public class LockListActivity extends AppCompatActivity {
      */
     private AnalyticsService analyticsService = Injection.getAnalyticsService();
 
+    String token;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        token =  getIntent().getStringExtra("token");
         viewModel = ViewModelProviders.of(this).get(LockListViewModel.class);
         setContentView(R.layout.activity_lock_list);
         if (findViewById(R.id.lock_detail_container) != null) twoPane = true;
@@ -112,6 +114,7 @@ public class LockListActivity extends AppCompatActivity {
         } else {
             Intent intent = new Intent(this, LockDetailActivity.class);
             intent.putExtra(LocksApp.ITEM_ID, lockId);
+            intent.putExtra("token", token);
             startActivity(intent);
         }
     }
