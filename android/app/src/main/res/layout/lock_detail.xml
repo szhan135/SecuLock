@@ -81,4 +81,5 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_content" />
+
 </android.support.constraint.ConstraintLayout>

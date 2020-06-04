@@ -62,6 +62,7 @@ public class LockListActivity extends AppCompatActivity {
         token =  getIntent().getStringExtra("token");
         viewModel = ViewModelProviders.of(this).get(LockListViewModel.class);
         setContentView(R.layout.activity_lock_list);
+
         if (findViewById(R.id.lock_detail_container) != null) twoPane = true;
 
         // Configure the action bar
@@ -69,7 +70,14 @@ public class LockListActivity extends AppCompatActivity {
         toolbar.setTitle(getTitle());
 
         // Add an item click handler to the floating action button for adding a lock
-        FloatingActionButton fab = findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        //pop window
+        fab.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), PopActivity.class));
+            }
+        });
         fab.setOnClickListener((View v) -> loadLockDetailFragment("new"));
 
         // Create the adapter that will be used to load items into the recycler view
