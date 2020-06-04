@@ -34,10 +34,12 @@ void loop (void)
   digitalWrite(SS, LOW);    // SS is pin 10
 
   // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
-  if (buttonState == HIGH) {
+  if (buttonState == LOW) {
     c = 1;
+    SPI.transfer (c);
   } else {
     c = 0;
+    SPI.transfer (c);
   }
     SPI.transfer (c);
 
