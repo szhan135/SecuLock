@@ -78,7 +78,7 @@ public class LockListActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), PopActivity.class));
             }
         });
-        fab.setOnClickListener((View v) -> loadLockDetailFragment("new"));
+        //fab.setOnClickListener((View v) -> loadLockDetailFragment("new"));
 
         // Create the adapter that will be used to load items into the recycler view
         final LockListAdapter adapter = new LockListAdapter((Lock item) -> loadLockDetailFragment(item.getLockId()));

@@ -16,6 +16,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package com.cs179.androidapp.ui;
 
+import android.app.Activity;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
@@ -41,8 +42,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
-public class PopActivity extends AppCompatActivity {
-
+public class PopActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
