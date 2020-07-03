@@ -1,4 +1,4 @@
-CS179J-Team6
+SecuLock
 ============
 
 CS 179J: Senior Design in Computer Architecture and Embedded Systems - SecuLock
